@@ -18,6 +18,8 @@ public class Player {
         this.hand[1] = pakli[0][1];
         this.hand[1] += pakli[1][1];
 
+
+        
     }
 }
 
