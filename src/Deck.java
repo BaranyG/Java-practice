@@ -11,7 +11,7 @@ public class Deck {
 //                                                    [3]                                         [12]
     }
 
-    public String[] shuffle(String[] array){
+    public static String[] shuffle(String[] array){
         Random rand = new Random();
         
         for (int i = 0; i < array.length; i++){
@@ -26,5 +26,5 @@ public class Deck {
 
         return array;
     }
-    
+
 }

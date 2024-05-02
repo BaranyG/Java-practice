@@ -25,13 +25,12 @@ public class Player {
         }
 
         // Shuffle the pakli2 array
-        pakli2 = new Deck().shuffle(pakli2);
+        pakli2 = Deck.shuffle(pakli2);
 
         // Print the shuffled pakli2 deck
         for (String card : pakli2) {
             System.out.println(card);
         }
-
         
         this.hand[0] = pakli2[0];
         this.hand[1] = pakli2[1];
@@ -40,59 +39,3 @@ public class Player {
 
 
 }
-
-
-/* 
-Treff 7
-Kor 3
-Pikk K
-Karo 9
-Kor J
-Kor A
-Karo 5
-Karo 10
-Karo 3
-Pikk 9
-Kor Q
-Pikk 5
-Pikk 2
-Treff 2
-Treff J
-Karo A
-Karo 8
-Karo 2
-Treff 6
-Kor 6
-Kor 2
-Kor 9
-Pikk Q
-Kor 8
-Pikk J
-Treff Q
-Treff 3
-Kor 7
-Pikk 4
-Karo 6
-Treff 4
-Karo 7
-Karo Q
-Pikk 8
-Kor 5
-Pikk 7
-Treff A
-Treff 9
-Pikk 3
-Karo 4
-Kor 4
-Kor K
-Karo J
-Treff 8
-Karo K
-Treff 10
-Pikk A
-Treff 5
-Pikk 10
-Pikk 6
-Kor 10
-Treff K
-*/
