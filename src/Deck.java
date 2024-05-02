@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Deck {
     String[][] pakli;
     //String pakli2[][];
@@ -8,4 +10,21 @@ public class Deck {
 //                                                    [0]                                         [1]
 //                                                    [3]                                         [12]
     }
+
+    public String[] shuffle(String[] array){
+        Random rand = new Random();
+        
+        for (int i = 0; i < array.length; i++){
+            int rand_int = rand.nextInt(array.length);
+            while( rand_int == i ){
+                rand_int = rand.nextInt(array.length);
+            }
+            String tmp = array[rand_int];    
+            array[rand_int] = array[i];
+            array[i] = tmp;
+        }
+
+        return array;
+    }
+    
 }

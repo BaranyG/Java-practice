@@ -1,4 +1,3 @@
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -27,10 +26,12 @@ public class Frame{
 
         // Create a panel with a button
         JPanel panel = new JPanel();
+        JButton buttonBet = new JButton("Bet");
         JButton buttonFold = new JButton("Fold");
         JButton buttonCall = new JButton("Call");
         JButton buttonRaise = new JButton("Raise");
         JButton buttonAllIn = new JButton("All In");
+        panel.add(buttonBet);
         panel.add(buttonFold);
         panel.add(buttonCall);
         panel.add(buttonRaise);
@@ -46,8 +47,9 @@ public class Frame{
 
         
         // Create another panel with text
+
         JPanel textPanel = new JPanel();
-        JLabel label = new JLabel("Player: " + joska.name);
+        JLabel label = new JLabel("Player: " + joska.name + " Keze: " + joska.hand[0] + " es " + joska.hand[1]);
         textPanel.add(label);
 
         // Set layout for the main frame
@@ -58,5 +60,4 @@ public class Frame{
 
         frame.setVisible(true);
     }
-    
 }
