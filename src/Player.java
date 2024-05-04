@@ -7,34 +7,38 @@ public class Player {
         this.hand = hand;
     }
 
-    public Player(){
-        this.name = "Joska";
-        
-        String[][] pakli = new Deck().pakli;
-        String[] pakli2 = new String[52];
-        
-        // Convert from 2D pakli array to 1D pakli2 array
-        int darab = 0;
-        for (int i = 0; i < pakli[0].length; i++){
-            String szin = pakli[0][i];
-            for (int j = 0; j < pakli[1].length; j++) {
-                String lap = szin + " " + pakli[1][j];
-                pakli2[darab] = lap;
-                darab++;
-            }
-        }
+    public Player(String name){
+        this.name = name;
 
+        String[] pakli = new Deck().pakli;
+        
         // Shuffle the pakli2 array
-        pakli2 = Deck.shuffle(pakli2);
+        pakli = Deck.shuffle(pakli);
 
         // Print the shuffled pakli2 deck
-        for (String card : pakli2) {
+        for (String card : pakli) {
             System.out.println(card);
         }
         
-        this.hand[0] = pakli2[0];
-        this.hand[1] = pakli2[1];
+        this.hand[0] = pakli[0];
+        this.hand[1] = pakli[1];
+    }
 
+    public Player(){
+        this.name = "Joska";
+        
+        String[] pakli = new Deck().pakli;
+        
+        // Shuffle the pakli2 array
+        pakli = Deck.shuffle(pakli);
+
+        // Print the shuffled pakli2 deck
+        for (String card : pakli) {
+            System.out.println(card);
+        }
+        
+        this.hand[0] = pakli[0];
+        this.hand[1] = pakli[1];
     }
 
 
