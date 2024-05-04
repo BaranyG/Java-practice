@@ -9,9 +9,10 @@ public class Deck {
 //                                                    [0]                                         [1]
 //                                                    [3]                                         [12]              
         // Convert from 2D cards array to 1D deck array
-        for (int i = 0; i < cards[0].length; i++){
-            for (int j = 0; j < cards[1].length; j++) {
-                deck[((j+1)+(i*13))-1] = cards[0][i] + " " + cards[1][j];
+        int index = 0;
+        for (String color : cards[0]){
+            for (String card : cards[1]){
+                deck[index++] = color + " " + card;
             }
         }
     }
