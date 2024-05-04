@@ -12,13 +12,8 @@ public class Player {
 
         String[] deck = new Deck().deck;
         
-        // Shuffle the deck2 array
+        // Shuffle the deck array
         deck = Deck.shuffle(deck);
-
-        // Print the shuffled deck2 deck
-        for (String card : deck) {
-            System.out.println(card);
-        }
         
         this.hand[0] = deck[0];
         this.hand[1] = deck[1];
@@ -29,13 +24,9 @@ public class Player {
         
         String[] deck = new Deck().deck;
         
-        // Shuffle the deck2 array
+        // Shuffle the deck array
         deck = Deck.shuffle(deck);
 
-        // Print the shuffled deck2 deck
-        for (String card : deck) {
-            System.out.println(card);
-        }
         
         this.hand[0] = deck[0];
         this.hand[1] = deck[1];
