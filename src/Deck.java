@@ -1,36 +1,41 @@
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Deck {
-    //String array[][];
-    String[] deck = new String[52];
+    //String[] deck = new String[52];
+    ArrayList<String> deck = new ArrayList<String>(52);
+
 
     public Deck(){
-        String[][] cards = new String[][]{ {"Pikk", "Karo", "Treff", "Kor"}, {"2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"} };
-//                                                    [0]                                         [1]
-//                                                    [3]                                         [12]              
-        // Convert from 2D cards array to 1D deck array
-        int index = 0;
+        String[][] cards = new String[][]{ 
+            {"Pikk", "Karo", "Treff", "Kor"}, //[0][3]
+            {"2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"} }; //[1][12]
+                    
+        // Convert from 2D cards array to ArrayList
         for (String color : cards[0]){
             for (String card : cards[1]){
-                deck[index++] = color + " " + card;
+                deck.add(color + " " + card) ;
             }
         }
     }
+    
 
-    public static String[] shuffle(String[] array){
+    public static ArrayList<String> shuffle(ArrayList<String> array){
         Random rand = new Random();
         
-        for (int i = 0; i < array.length; i++){
-            int rand_int = rand.nextInt(array.length);
-            while( rand_int == i ){
-                rand_int = rand.nextInt(array.length);
-            }
-            String tmp = array[rand_int];    
-            array[rand_int] = array[i];
-            array[i] = tmp;
+        for (int i = 0; i < array.size(); i++){
+            int rand_int = rand.nextInt(array.size());
+            String tmp = array.get(rand_int);    
+            array.set(rand_int, array.get(i));
+            array.set(i, tmp);
         }
-
         return array;
     }
 
+
+    public static String draw(ArrayList<String> array){
+        String card = array.get(array.size()-1);
+        array.remove(array.size()-1);
+        return card;
+    }
 }
