@@ -2,12 +2,17 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class Frame{
 
     public Frame(){
-        Player joska = new Player();
+        ArrayList<String> deck = new Deck().deck;
+        Deck.shuffle(deck);
         
+        Player joseph = new Player("Joska", Deck.draw(deck), Deck.draw(deck));
+        Player moni = new Player("Moni", Deck.draw(deck), Deck.draw(deck));
+
         // Create the main frame
         JFrame frame = new JFrame("JFrame Example");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -49,8 +54,10 @@ public class Frame{
         // Create another panel with text
 
         JPanel textPanel = new JPanel();
-        JLabel label = new JLabel("Player: " + joska.name + " Keze: " + joska.hand[0] + " es " + joska.hand[1]);
+        JLabel label = new JLabel("Player: " + joseph.name + " Keze: " + joseph.hand1 + " es " + joseph.hand2);
+        JLabel label2 = new JLabel("Player: " + moni.name + " Keze: " + moni.hand1 + " es " + moni.hand2);
         textPanel.add(label);
+        textPanel.add(label2);
 
         // Set layout for the main frame
         frame.setLayout(new BorderLayout());
