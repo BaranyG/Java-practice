@@ -1,36 +1,43 @@
+import java.util.ArrayList;
+
 public class Player {
     String name;
-    String[] hand = new String[2];
+    String hand1;
+    String hand2;
 
-    public Player(String name, String[] hand){
+    public Player(String name, String hand1, String hand2){
         this.name = name;
-        this.hand = hand;
+        this.hand1 = hand1;
+        this.hand2 = hand2;
     }
 
     public Player(String name){
         this.name = name;
 
-        String[] deck = new Deck().deck;
+        ArrayList<String> deck = new Deck().deck;
         
         // Shuffle the deck array
         deck = Deck.shuffle(deck);
         
-        this.hand[0] = deck[0];
-        this.hand[1] = deck[1];
+        this.hand1 = deck.get(0);
+        this.hand2 = deck.get(1);
+    }
+
+    public Player(String hand1, String hand2){
+        this.name = "Joseph";
+        this.hand1 = hand1;
+        this.hand2 = hand2;
     }
 
     public Player(){
-        this.name = "Joska";
+        this.name = "Joseph";
         
-        String[] deck = new Deck().deck;
-        
+        ArrayList<String> deck = new Deck().deck;
+
         // Shuffle the deck array
         deck = Deck.shuffle(deck);
-
         
-        this.hand[0] = deck[0];
-        this.hand[1] = deck[1];
+        this.hand1 = deck.get(0);
+        this.hand2 = deck.get(1);
     }
-
-
 }
