@@ -14,7 +14,7 @@ public class Player {
     public Player(String name){
         this.name = name;
 
-        ArrayList<String> deck = new Deck().deck;
+        ArrayList<String> deck = Deck.get().deck;
         
         // Shuffle the deck array
         deck = Deck.shuffle(deck);
@@ -32,7 +32,7 @@ public class Player {
     public Player(){
         this.name = "Joseph";
         
-        ArrayList<String> deck = new Deck().deck;
+        ArrayList<String> deck = Deck.get().deck;
 
         // Shuffle the deck array
         deck = Deck.shuffle(deck);
