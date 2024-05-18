@@ -2,16 +2,13 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 
 public class Frame{
 
     public Frame(){
-        ArrayList<String> deck = Deck.get().deck;
-        Deck.shuffle(deck);
         
-        Player joseph = new Player("Joska", Deck.draw(deck), Deck.draw(deck));
-        Player moni = new Player("Moni", Deck.draw(deck), Deck.draw(deck));
+        Player joseph = new Player("Joska");
+        Player moni = new Player("Moni");
 
         // Create the main frame
         JFrame frame = new JFrame();
