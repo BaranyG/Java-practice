@@ -24,15 +24,12 @@ public class Deck {
     public static Deck get(){
         if(instance == null){
             instance = new Deck();
+            shuffle(instance.deck);
         }
         return instance;
     }
     
-    /**
-     * 
-     * @param ArrayList<String>
-     * @return ArrayList
-     */
+
     public static ArrayList<String> shuffle(ArrayList<String> array){
         Random rand = new Random();
         
