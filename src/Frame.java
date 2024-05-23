@@ -3,12 +3,30 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+
+import Builder.DeckBuilder;
+import DTO.Deck;
+import DTO.Player;
+import Service.DeckOperations;
+import Service.PlayerOperations;
+
 public class Frame{
 
     public Frame(){
         
-        Player joseph = new Player("Joska");
-        Player moni = new Player("Moni");
+
+        
+        Deck deck = new Deck(DeckBuilder.createDeck());
+
+        DeckOperations deckOperations = new DeckOperations();
+
+        deckOperations.shuffle(deck);
+
+        PlayerOperations playerOperations = new PlayerOperations();
+
+
+        Player player1 = new Player(deck);
+        Player player2 = new Player("Moni", deck);
 
         // Create the main frame
         JFrame frame = new JFrame();
@@ -53,8 +71,8 @@ public class Frame{
         
         // Create another panel with status
         JPanel statusPanel = new JPanel();
-        JLabel label = new JLabel("Player: " + joseph.name + " Keze: " + joseph.hand1 + " es " + joseph.hand2);
-        JLabel label2 = new JLabel("Player: " + moni.name + " Keze: " + moni.hand1 + " es " + moni.hand2);
+        JLabel label = new JLabel("Player: " + player1.name + " Keze: " + player1.hand1 + " es " + player1.hand2);
+        JLabel label2 = new JLabel("Player: " + player2.name + " Keze: " + player2.hand1 + " es " + player2.hand2);
         statusPanel.add(label);
         statusPanel.add(label2);
 
